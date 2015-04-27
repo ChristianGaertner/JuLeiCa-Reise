@@ -1,0 +1,21 @@
+{
+	"text": "Gut, dass die Telefonnummer aller Teilnehmer",
+	"img": null,
+	"random": [
+		{
+			"text": "Niemand geht dran.",
+			"next": 39,
+			"chance": 0.3
+		},
+		{
+			"text": "Es meldet sich die ältere Schwester.",
+			"next": 33,
+			"chance": 0.5
+		},
+		{
+			"text": "Es meldet sich die Mutter",
+			"next": 51,
+			"chance": 0.2
+		}
+	]
+}

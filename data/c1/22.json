@@ -1,0 +1,16 @@
+{
+	"text": "Eine gute Wahl.",
+	"img": "link",
+	"choices": [
+		{
+			"text": null,
+			"next": 17
+		}
+	],
+	"points": [
+		{
+			"type": "group_mood",
+			"amount": -1
+		}
+	]
+}

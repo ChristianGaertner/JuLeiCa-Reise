@@ -1,0 +1,16 @@
+{
+	"text": "So ein Glück das wird belohnt.",
+	"img": null,
+	"choices": [
+		{
+			"text": null,
+			"next": 43
+		}
+	],
+	"points": [
+		{
+			"type": "personal_mood",
+			"amount": 1
+		}
+	]
+}

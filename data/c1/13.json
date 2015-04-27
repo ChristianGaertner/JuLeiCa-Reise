@@ -1,0 +1,16 @@
+{
+	"text": "Was sehen Deine müden Augen?",
+	"img": "link",
+	"choices": [
+		{
+			"text": null,
+			"next": 73
+		}
+	],
+	"points": [
+		{
+			"type": "xp",
+			"amount": -2
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"text": "Hast Du zu Beginn der Busfahrt",
+	"img": "link",
+	"choices": [
+		{
+			"text": "Ja",
+			"next": 40
+		},
+		{
+			"text": "Nein",
+			"next": 60
+		}
+	]
+}

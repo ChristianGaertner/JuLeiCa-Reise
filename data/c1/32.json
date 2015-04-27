@@ -1,0 +1,14 @@
+{
+	"text": "Sasha sollte bestraft werden - oder etwa nicht?",
+	"img": null,
+	"choices": [
+		{
+			"text": "Sasha bleibt straffrei!",
+			"next": 73
+		},
+		{
+			"text": "1 Woche Küchendienst!",
+			"next": 75
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"text": "'Das hat sich ja",
+	"img": null,
+	"choices": [
+		{
+			"text": null,
+			"next": 47,
+			"condition": [
+				{
+					"partner": ["Sandra", "Horst"]
+				}
+			]
+		},
+		{
+			"text": null,
+			"next": 49,
+			"condition": [
+				{
+					"partner": ["Wiebke", "Murat"]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"text": "'Sollten wir nicht noch den Bus checken, bevor wir einsteigen?'",
+	"img": "link",
+	"choices": [
+		{
+			"text": null,
+			"next": 23
+		}
+	]
+}

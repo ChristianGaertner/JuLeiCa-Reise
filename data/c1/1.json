@@ -1,0 +1,18 @@
+{
+	"text": "Jetzt rückt der Zeiger Deiner Armbanduhr immer weiter vor.",
+	"img": null,
+	"choices": [
+		{
+			"text": "Willst Du bei ihm zu Hause anrufen?",
+			"next": 12
+		},
+		{
+			"text": "Willst Du 20 Minuten warten?",
+			"next": 39
+		},
+		{
+			"text": "Möchtest Du lieber den Bus packen und Dominik zu Hause in Fischbach abholen?",
+			"next": 45
+		}
+	]
+}

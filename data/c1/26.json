@@ -1,0 +1,16 @@
+{
+	"text": "Wow, Matrix!",
+	"img": null,
+	"choices": [
+		{
+			"text": null,
+			"next": 61
+		}
+	],
+	"points": [
+		{
+			"type": "group_mood",
+			"amount": 1
+		}
+	]
+}

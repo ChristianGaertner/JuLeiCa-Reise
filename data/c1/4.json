@@ -1,0 +1,24 @@
+{
+	"text": "Du willst dann aber endlich das Abfahrtssignal geben.",
+	"img": null,
+	"choices": [
+		{
+			"text": null,
+			"next": 27,
+			"condition": [
+				{
+					"partner": ["Sandra", "Horst"]
+				}
+			]
+		},
+		{
+			"text": null,
+			"next": 18,
+			"condition": [
+				{
+					"partner": ["Wiebke", "Murat"]
+				}
+			]
+		}
+	]
+}

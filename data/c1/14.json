@@ -1,0 +1,32 @@
+{
+	"text": "Die Diskussion mit allen Teilnehmern",
+	"img": null,
+	"random": [
+		{
+			"text": "Du musst bestimmen",
+			"next": 55,
+			"chance": 0.5,
+			"points": [
+				{
+					"type": "personal_mood",
+					"amount": "-2"
+				}
+			]
+		},
+		{
+			"text": "Gemeinsam beschlossen",
+			"next": 43,
+			"chance": 0.5,
+			"points": [
+				{
+					"type": "personal_mood",
+					"amount": 1
+				},
+				{
+					"type": "group_mood",
+					"amount": 1
+				}
+			]
+		}
+	],
+}

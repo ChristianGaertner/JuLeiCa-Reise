@@ -1,0 +1,16 @@
+{
+	"text": "Welch edles Opfer.",
+	"img": null,
+	"choices": [
+		{
+			"text": null,
+			"next": 8
+		}
+	],
+	"points": [
+		{
+			"type": "personal_mood",
+			"amount": -2
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"text": "'Ich wusste, dass wir dürfen.'",
+	"img": "link",
+	"choices": [
+		{
+			"text": null,
+			"next": 43
+		}
+	],
+	"points": [
+		{
+			"type": "xp",
+			"amount": -1
+		}
+	]
+}

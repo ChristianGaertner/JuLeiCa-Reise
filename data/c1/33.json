@@ -1,0 +1,10 @@
+{
+	"text": "Du hast Glück, es dauert keine 10 Minuten",
+	"img": "link",
+	"choices": [
+		{
+			"text": null,
+			"next": 25
+		}
+	]
+}

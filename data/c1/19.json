@@ -1,0 +1,14 @@
+{
+	"text": "Wie die Zeit vergeht",
+	"img": null,
+	"choices": [
+		{
+			"text": "Werner bietet Euch an, eine DVD zuschauen.",
+			"next": 62
+		},
+		{
+			"text": "Du ziehst ein Spiel vor.",
+			"next": 5
+		}
+	]
+}

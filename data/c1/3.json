@@ -1,0 +1,14 @@
+{
+	"text": "Die Zeit vergeht wie im Fluge.",
+	"img": null,
+	"choices": [
+		{
+			"text": "Soll er einen nahe gelegenen Parkplatz ansteuern?",
+			"next": 22
+		},
+		{
+			"text": "Möchtest Du lieber zu einer großen Raststätte fahren?",
+			"next": 22
+		}
+	]
+}
