@@ -1,28 +1,86 @@
 (function () {
-	
-	var width = 960,
-		height = 2200;
-
-	var cluster = d3.layout.cluster()
-		.size([height, width - 160]);
-
-	var diagonal = d3.svg.diagonal()
-		.projection(function(d) { return [d.y, d.x]; });
-
-	var svg = d3.select("body").append("svg")
-		.attr("width", width)
-		.attr("height", height)
-		.append("g")
-		.attr("transform", "translate(40,0)");
-
-
 	loadChapter(1, function (err, data) {
-		
-	})
+		var nodes = data
 
+		var links = []
+
+
+		// for each node generate all links
+		for (var i = 0; i < nodes.length; i++) {
+			var n = nodes[i];
+			var choices = [];
+
+			if (n.choices != null) {
+				choices = n.choices;
+			} else if (n.random != null) {
+				choices = n.random;
+			}
+
+			// for each choice create a link
+			for (var x = 0; x < choices.length; x++) {
+				choice = choices[x]
+
+				var link = {
+					"source": n.id,
+					"target": choice.next
+				}
+				links.push(link)
+			}
+
+		}
+
+		console.log(links)
+		
+		displayGraph({
+			"nodes": nodes,
+			"links": links
+		})
+	})
 })()
 
 
+function displayGraph (payload) {
+	var width = 960,
+    	height = 500;
+
+	for (var i = 0; i < payload.nodes.length; i++) {
+		if (payload.nodes[i]) {} else {
+			alert("shit")
+		}
+	};
+
+	var force = d3.layout.force()
+		.nodes(payload.nodes)
+		.links(payload.links)
+		.size([width, height])
+		.charge(-30)
+		.linkDistance(20);
+
+	var svg = d3.select("body").append("svg")
+		.attr("width", width)
+		.attr("height", height);
+
+	svg.append("rect")
+		.attr("width", width)
+		.attr("height", height);
+
+	var link = svg.selectAll(".link")
+		.data(payload.links)
+		.enter()
+			.append("line")
+			.attr("class", "link");
+
+	var node = svg.selectAll(".node")
+		.data(payload.nodes)
+		.enter()
+			.append("circle")
+			.attr("class", "node")
+			.attr("r", 5)
+			.style("fill", function(d) { return "red"; })
+			.call(force.drag);
+
+	force.start();
+}
 
 function loadChapter (id, fn) {
 	
