@@ -156,7 +156,7 @@ function loadChapter (id, fn) {
 }
 
 function loadNode (chapter, id, fn) {
-	d3.json('/data/c' + chapter + '/' + id + '.json', function(err, data) {
+	d3.json('data/c' + chapter + '/' + id + '.json', function(err, data) {
 	  fn(err, data, id)
 	});
 }
