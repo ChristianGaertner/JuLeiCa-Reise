@@ -1,0 +1,11 @@
+{
+	"id": -1,
+	"text": "Game Over",
+	"img": null,
+	"choices": [
+		{
+			"text": null,
+			"next": 0
+		}
+	]
+}

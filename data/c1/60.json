@@ -1,0 +1,14 @@
+{
+    "id": 60,
+    "choices": [
+        {
+            "text": "REPLACE_WITH_REAL_DATA",
+            "next": 11
+        },
+        {
+            "text": "REPLACE_WITH_REAL_DATA",
+            "next": 28
+        }
+    ],
+    "DUMMY_DATA": "REPLACE_WITH_REAL_DATA"
+}

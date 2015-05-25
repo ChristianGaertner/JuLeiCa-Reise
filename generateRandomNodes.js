@@ -54,4 +54,4 @@ function random (min, max) {
 }
 
 
-generateDummyNodes(1, 34, 70);
+generateDummyNodes(1, 34, 80);
