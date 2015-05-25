@@ -29,6 +29,7 @@
 
 		}
 
+		console.log(nodes)
 		console.log(links)
 		
 		displayGraph({
@@ -95,6 +96,10 @@ function loadChapter (id, fn) {
 
 		loadNode(id, 'intro', function (err, data) {
 			chapter.push(data)
+		})
+
+		loadNode(id, '-1', function (err, data) {
+			chapter[-1] = data
 		})
 
 		for (var i = 1; i <= LAST; i++) {
