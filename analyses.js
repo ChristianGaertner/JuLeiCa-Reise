@@ -29,9 +29,6 @@
 
 		}
 
-		console.log(nodes)
-		console.log(links)
-		
 		displayGraph({
 			"nodes": nodes,
 			"links": links
@@ -44,45 +41,87 @@ function displayGraph (payload) {
 	var width = 960,
     	height = 500;
 
-	for (var i = 0; i < payload.nodes.length; i++) {
-		if (payload.nodes[i]) {} else {
-			alert("shit")
-		}
-	};
+	var svg = d3.select("body").append("svg")
+		.attr("viewBox", "0 0 " + width + " " + height);
 
-	var force = d3.layout.force()
+	var force = self.force = d3.layout.force()
 		.nodes(payload.nodes)
 		.links(payload.links)
 		.size([width, height])
-		.charge(-30)
-		.linkDistance(20);
+		.gravity(.05)
+		.distance(100)
+		.charge(-100)
+		.start();
 
-	var svg = d3.select("body").append("svg")
-		.attr("width", width)
-		.attr("height", height);
+	svg.append("svg:defs").selectAll("marker")
+	    .data(["end"])
+	  		.enter().append("svg:marker")
+		    .attr("id", String)
+		    .attr("viewBox", "0 -5 10 10")
+		    .attr("refX", 15)
+		    .attr("refY", -1.5)
+		    .attr("markerWidth", 6)
+		    .attr("markerHeight", 6)
+		    .attr("orient", "auto")
+  			.append("svg:path")
+	    		.attr("d", "M0,-5L10,0L0,5");
 
-	svg.append("rect")
-		.attr("width", width)
-		.attr("height", height);
-
-	var link = svg.selectAll(".link")
+	var link = svg.selectAll("line.link")
 		.data(payload.links)
 		.enter()
-			.append("line")
-			.attr("class", "link");
+			.append("svg:line")
+			.attr("class", "link")
+			.attr('marker-end', "url(#end)")
+			.attr("x1", function(d) { return d.source.x; })
+			.attr("y1", function(d) { return d.source.y; })
+			.attr("x2", function(d) { return d.target.x; })
+			.attr("y2", function(d) { return d.target.y; });
 
-	var node = svg.selectAll(".node")
+	var nodeDrag = d3.behavior.drag()
+		.on("dragstart", function () {
+			force.stop()
+		})
+		.on("drag", function (d, i) {
+			d.px += d3.event.dx;
+			d.py += d3.event.dy;
+			d.x += d3.event.dx;
+			d.y += d3.event.dy;
+			tick();
+		})
+		.on("dragend", function (d, i) {
+			d.fixed = true;
+			tick();
+			force.resume();
+		});
+
+	var node = svg.selectAll('g.node')
 		.data(payload.nodes)
 		.enter()
-			.append("circle")
-			.attr("class", "node")
-			.attr("r", 5)
-			.style("fill", function(d) { return "red"; })
-			.call(force.drag);
+			.append('svg:g')
+			.attr('class', 'node')
+			.call(nodeDrag);
 
-	force.start();
+	node.append("circle")
+		.attr("class", "circle")
+		.attr("r", 5);
+
+	node.append("svg:text")
+        .attr("class", "nodetext")
+        .attr("dx", 12)
+        .attr("dy", ".35em")
+        .text(function(d) { return d.id });
+
+    force.on('tick', tick)
+
+	function tick () {
+		node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+		link.attr("x1", function(d) { return d.source.x; })
+			.attr("y1", function(d) { return d.source.y; })
+			.attr("x2", function(d) { return d.target.x; })
+			.attr("y2", function(d) { return d.target.y; });
+	}
 }
-
 function loadChapter (id, fn) {
 	
 	var chapter = []
@@ -98,9 +137,10 @@ function loadChapter (id, fn) {
 			chapter.push(data)
 		})
 
-		loadNode(id, '-1', function (err, data) {
-			chapter[-1] = data
-		})
+		// loadNode(id, '-1', function (err, data) {
+		// 	chapter[-1] = data
+		// 	console.log(chapter)
+		// })
 
 		for (var i = 1; i <= LAST; i++) {
 			loadNode(id, i, function (err, data, i) {
