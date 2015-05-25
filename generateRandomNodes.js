@@ -33,7 +33,7 @@ function generateChoices(limit) {
 	for (var i = 0; i <= x; i++) {
 		choices.push({
 			"text": "REPLACE_WITH_REAL_DATA",
-			"next": random(1, limit)
+			"next": Math.round(random(1, limit))
 		});
 	}
 
