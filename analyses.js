@@ -126,7 +126,7 @@ function loadChapter (id, fn) {
 	
 	var chapter = []
 
-	d3.json('/data/c' + id + '/chapter.json', function(err, data) {
+	d3.json('data/c' + id + '/chapter.json', function(err, data) {
 		if (data.id != id) {
 			alert('INVALID CHAPTER.JSON')
 		}
